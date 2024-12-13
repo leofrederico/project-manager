@@ -1,22 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
       
 import Home from './components/pages/Home.js' 
 import Company from './components/pages/Company.js'
 import Contact from './components/pages/Contact.js'
 import NewProject from './components/pages/NewProjet.js'
+import Projects from './components/pages/Projects.js'
 
 import Container from './components/layout/Container.js'
+import Navbar from './components/layout/Navbar.js'
+import Footer from './components/layout/Footer.js'
 
 function App() {
   return (
     <Router>
 
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/company">Company</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/newproject">New Project</Link>
-      </div>
+      <Navbar />
 
       <Container custonClass="min-height">
           <Routes>
@@ -24,13 +22,15 @@ function App() {
 
               <Route path="/company" element={<Company/>} />
 
+              <Route path="/projects" element={<Projects/>} />
+
               <Route path="/contact" element={<Contact/>} />
 
               <Route path="/newproject" element={<NewProject/>} />
           </Routes>
       </Container>
 
-      <p>Footer</p>
+      <Footer />
     </Router>
   );
 }
