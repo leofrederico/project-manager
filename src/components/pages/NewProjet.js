@@ -1,3 +1,5 @@
+import NewProjet from './NewProject.module.css'
+
 function NewProject(){
 
     return(
